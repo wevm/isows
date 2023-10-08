@@ -1,32 +1,34 @@
 {
-	"files": {
-		"ignore": [
-			"_cjs",
-			"_esm",
-			"_types",
-			".next",
-			"bun.lockb",
-			"tsconfig.json",
-			"tsconfig.*.json",
-			"tsconfig.node.json"
-		]
-	},
-	"formatter": {
-		"enabled": true
-	},
-	"linter": {
-		"enabled": true,
-		"rules": {
-			"recommended": true,
-			"performance": {
-				"noDelete": "off"
-			},
-			"style": {
-				"noNonNullAssertion": "off"
-			},
-			"suspicious": {
-				"noAssignInExpressions": "off"
-			}
-		}
-	}
+  "files": {
+    "ignore": [
+      "_cjs",
+      "_esm",
+      "_types",
+      ".next",
+      "bun.lockb",
+      "tsconfig.json",
+      "tsconfig.*.json",
+      "tsconfig.node.json"
+    ]
+  },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "indentSize": 2
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "performance": {
+        "noDelete": "off"
+      },
+      "style": {
+        "noNonNullAssertion": "off"
+      },
+      "suspicious": {
+        "noAssignInExpressions": "off"
+      }
+    }
+  }
 }

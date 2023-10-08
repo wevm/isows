@@ -16,7 +16,7 @@ jobs:
         uses: ./.github/actions/install-dependencies
 
       - name: Lint code
-        run: pnpm format && pnpm lint
+        run: bun run format && bun run lint
       
       - uses: stefanzweifel/git-auto-commit-action@v5
         env:
@@ -38,7 +38,7 @@ jobs:
         uses: ./.github/actions/install-dependencies
         
       - name: Check types
-        run: pnpm typecheck
+        run: bun run typecheck
 
   test:
     name: Test
@@ -48,53 +48,53 @@ jobs:
         type: ['bun', 'deno', 'node-16', 'node-18', 'node-20', 'node-latest', 'next', 'vite']
         include:
           - type: bun
-            script: bun
+            runtime: bun
           - type: deno
-            script: deno
+            runtime: deno
           - type: node-16
             node-version: 16
-            script: node
+            runtime: node
           - type: node-18
             node-version: 18
-            script: node
+            runtime: node
           - type: node-20
             node-version: 20
-            script: node
+            runtime: node
           - type: node-latest
             node-version: latest
-            script: node
+            runtime: node
           - type: next
-            script: next
+            runtime: next
           - type: vite
-            script: vite
+            runtime: vite
 
     steps:
       - name: Clone repository
         uses: actions/checkout@v4
 
       - name: Set up Bun
-        if: ${{ matrix.script == 'bun' }}
+        if: ${{ matrix.runtime == 'bun' }}
         uses: oven-sh/setup-bun@v1
 
       - name: Set up Node
-        if: ${{ matrix.script == 'node' }}
+        if: ${{ matrix.runtime == 'node' }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
 
       - name: Set up Deno
-        if: ${{ matrix.script == 'deno' }}
+        if: ${{ matrix.runtime == 'deno' }}
         uses: denoland/setup-deno@v1
 
       - name: Install Playwright Browsers
-        if: ${{ matrix.script == 'next' || matrix.script == 'vite' }}
+        if: ${{ matrix.runtime == 'next' || matrix.runtime == 'vite' }}
         run: npx playwright install --with-deps
 
       - name: Install dependencies
         uses: ./.github/actions/install-dependencies
 
       - name: Build
-        run: pnpm build
+        run: bun run build
 
       - name: Run tests
-        run: pnpm test:${{ matrix.script }}
+        run: bun run test:${{ matrix.runtime }}

@@ -1,28 +1,28 @@
 {
-  "name": "root",
+  "workspaces": ["test/*", "src"],
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "pnpm clean && pnpm build:cjs && pnpm build:esm && pnpm build:types",
+    "build": "bun run clean && bun run build:cjs && bun run build:esm && bun run build:types",
     "build:cjs": "tsc --project ./tsconfig.build.json --module commonjs --moduleResolution node --outDir ./src/_cjs --removeComments --verbatimModuleSyntax false && printf '{\"type\":\"commonjs\"}' > ./src/_cjs/package.json",
     "build:esm": "tsc --project ./tsconfig.build.json --module es2015 --moduleResolution node --outDir ./src/_esm && printf '{\"type\": \"module\",\"sideEffects\":false}' > ./src/_esm/package.json",
     "build:types": "tsc --project ./tsconfig.build.json --module esnext --moduleResolution node --declarationDir ./src/_types --emitDeclarationOnly --declaration --declarationMap",
     "changeset": "changeset",
-    "changeset:release": "pnpm build && changeset publish",
-    "changeset:version": "changeset version && pnpm install --lockfile-only",
+    "changeset:release": "bun run build && bun run prepublishOnly && changeset publish",
+    "changeset:version": "changeset version && bun install --lockfile-only",
     "clean": "rimraf src/_esm src/_cjs src/_types",
     "format": "biome format . --write",
     "lint": "biome check . --apply",
-    "preinstall": "npx only-allow pnpm",
+    "preinstall": "npx only-allow bun",
     "prepare": "npx simple-git-hooks",
     "prepublishOnly": "npx bun scripts/prepublishOnly.ts",
     "size": "size-limit",
-    "test": "pnpm test:node && pnpm test:bun && pnpm test:deno && pnpm test:vite && pnpm test:next",
-    "test:bun": "cd test/bun && pnpm test",
-    "test:deno": "cd test/deno && pnpm test",
-    "test:next": "cd test/next && pnpm test",
-    "test:node": "cd test/node && pnpm test",
-    "test:vite": "cd test/vite && pnpm test",
+    "test": "bun run test:node && bun run test:bun && bun run test:deno && bun run test:vite && bun run test:next",
+    "test:bun": "cd test/bun && bun run test",
+    "test:deno": "cd test/deno && bun run test",
+    "test:next": "cd test/next && bun run test",
+    "test:node": "cd test/node && bun run test",
+    "test:vite": "cd test/vite && bun run test",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
@@ -39,7 +39,6 @@
     "ws": "^8.14.2"
   },
   "simple-git-hooks": {
-    "pre-commit": "pnpm format && pnpm lint"
-  },
-  "packageManager": "pnpm@8.7.6"
+    "pre-commit": "bun run format && bun run lint"
+  }
 }
