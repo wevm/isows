@@ -37,7 +37,7 @@ jobs:
           npm --no-git-tag-version version $(npm pkg get version | sed 's/"//g')-canary.$(date +'%Y%m%dT%H%M%S')
 
       - name: Build
-        run: bun run build
+        run: pnpm build
 
       - name: Publish to npm
         run: npm publish --tag canary
@@ -65,8 +65,8 @@ jobs:
         with:
           title: 'chore: version packages'
           commit: 'chore: version packages'
-          publish: bun run changeset:release
-          version: bun run changeset:version
+          publish: pnpm changeset:release
+          version: pnpm changeset:version
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

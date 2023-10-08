@@ -1,5 +1,5 @@
 {
-  "name": "vite-test",
+  "name": "test-vite",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -8,7 +8,7 @@
     "test": "playwright test"
   },
   "dependencies": {
-    "isows": "file:../../src"
+    "isows": "workspace:*"
   },
   "devDependencies": {
     "@playwright/test": "^1.38.1",

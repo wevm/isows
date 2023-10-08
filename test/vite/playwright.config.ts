@@ -11,6 +11,7 @@ import { defineConfig, devices } from "@playwright/test";
  */
 export default defineConfig({
 	testDir: "./tests",
+	retries: 3,
 	projects: [
 		{
 			name: "chromium",
@@ -28,6 +29,6 @@ export default defineConfig({
 		},
 	],
 	webServer: {
-		command: "bun run dev",
+		command: "pnpm dev",
 	},
 });

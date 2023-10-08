@@ -5,6 +5,7 @@
 			"_esm",
 			"_types",
 			".next",
+			"bun.lockb",
 			"node.js",
 			"tsconfig.json",
 			"tsconfig.*.json",

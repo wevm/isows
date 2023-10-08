@@ -1,10 +1,10 @@
 {
-	"name": "deno",
+	"name": "test-deno",
 	"private": true,
 	"scripts": {
 		"test": "deno run --allow-net --allow-env index.ts"
 	},
 	"dependencies": {
-		"isows": "file:../../src"
+		"isows": "workspace:*"
 	}
 }

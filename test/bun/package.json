@@ -1,10 +1,10 @@
 {
-	"name": "bun-test",
+	"name": "test-bun",
 	"private": true,
 	"scripts": {
 		"test": "bun index.ts"
 	},
 	"dependencies": {
-		"isows": "file:../../src"
+		"isows": "workspace:*"
 	}
 }
