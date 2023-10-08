@@ -4,8 +4,8 @@
 	"version": "0.0.1",
   "type": "module",
 	"browser": "./_esm/native.js",
-	"main": "./_cjs/node.js",
-	"module": "./_esm/node.js",
+	"main": "./_cjs/index.js",
+	"module": "./_esm/index.js",
 	"types": "./_types/native.d.ts",
 	"typings": "./_types/native.d.ts",
 	"sideEffects": false,
@@ -23,8 +23,8 @@
 			"types": "./_types/native.d.ts",
       "bun":"./_esm/native.js",
 			"browser":"./_esm/native.js",
-			"import": "./_esm/node.js",
-			"default": "./_cjs/node.js"
+			"import": "./_esm/index.js",
+			"default": "./_cjs/index.js"
 		},
 		"./package.json": "./package.json"
 	},

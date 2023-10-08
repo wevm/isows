@@ -6,7 +6,6 @@
 			"_types",
 			".next",
 			"bun.lockb",
-			"node.js",
 			"tsconfig.json",
 			"tsconfig.*.json",
 			"tsconfig.node.json"
