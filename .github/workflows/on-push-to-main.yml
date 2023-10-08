@@ -13,37 +13,6 @@ jobs:
     uses: ./.github/workflows/verify.yml
     secrets: inherit
 
-  canary:
-    name: Release canary
-    needs: verify
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-
-    steps:
-      - name: Clone repository
-        uses: actions/checkout@v3
-
-      - name: Install dependencies
-        uses: ./.github/actions/install-dependencies
-
-      - name: Setup .npmrc file
-        uses: actions/setup-node@v3
-        with:
-          registry-url: 'https://registry.npmjs.org'
-
-      - name: Set version
-        run: |
-          npm --no-git-tag-version version minor
-          npm --no-git-tag-version version $(npm pkg get version | sed 's/"//g')-canary.$(date +'%Y%m%dT%H%M%S')
-
-      - name: Build
-        run: bun run build
-
-      - name: Publish to npm
-        run: npm publish --tag canary
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
   changesets:
     name: Changesets
     needs: verify
@@ -65,8 +34,8 @@ jobs:
         with:
           title: 'chore: version packages'
           commit: 'chore: version packages'
-          publish: bun run changeset:release
-          version: bun run changeset:version
+          publish: pnpm changeset:release
+          version: pnpm changeset:version
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
