@@ -1,7 +1,7 @@
 {
 	"name": "isows",
 	"description": "Isomorphic WebSocket",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"type": "module",
 	"browser": "./_esm/native.js",
 	"main": "./_cjs/index.js",
