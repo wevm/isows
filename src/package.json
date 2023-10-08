@@ -1,8 +1,8 @@
 {
 	"name": "isows",
 	"description": "Isomorphic WebSocket",
-	"version": "0.0.1",
-  "type": "module",
+	"version": "1.0.0",
+	"type": "module",
 	"browser": "./_esm/native.js",
 	"main": "./_cjs/index.js",
 	"module": "./_esm/index.js",
@@ -21,8 +21,8 @@
 	"exports": {
 		".": {
 			"types": "./_types/native.d.ts",
-      "bun":"./_esm/native.js",
-			"browser":"./_esm/native.js",
+			"bun": "./_esm/native.js",
+			"browser": "./_esm/native.js",
 			"import": "./_esm/index.js",
 			"default": "./_cjs/index.js"
 		},
@@ -33,12 +33,20 @@
 	},
 	"license": "MIT",
 	"repository": "wagmi-dev/isows",
-	"authors": ["jxom.eth"],
+	"authors": [
+		"jxom.eth"
+	],
 	"funding": [
 		{
 			"type": "github",
 			"url": "https://github.com/sponsors/wagmi-dev"
 		}
 	],
-	"keywords": ["isomorphic", "websocket", "ws", "node", "browser"]
+	"keywords": [
+		"isomorphic",
+		"websocket",
+		"ws",
+		"node",
+		"browser"
+	]
 }
