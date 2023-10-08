@@ -1,5 +1,0 @@
----
-"isows": major
----
-
-Initial release.
