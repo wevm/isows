@@ -1,0 +1,32 @@
+{
+	"files": {
+		"ignore": [
+			"_cjs",
+			"_esm",
+			"_types",
+			".next",
+			"node.js",
+			"tsconfig.json",
+			"tsconfig.*.json",
+			"tsconfig.node.json"
+		]
+	},
+	"formatter": {
+		"enabled": true
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true,
+			"performance": {
+				"noDelete": "off"
+			},
+			"style": {
+				"noNonNullAssertion": "off"
+			},
+			"suspicious": {
+				"noAssignInExpressions": "off"
+			}
+		}
+	}
+}

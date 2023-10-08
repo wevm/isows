@@ -1,0 +1,43 @@
+{
+	"workspaces": ["test/*", "src"],
+	"private": true,
+	"type": "module",
+	"scripts": {
+    "build": "bun run clean && bun run build:cjs && bun run build:esm && bun run build:types",
+    "build:cjs": "tsc --project ./tsconfig.build.json --module commonjs --moduleResolution node --outDir ./src/_cjs --removeComments --verbatimModuleSyntax false && printf '{\"type\":\"commonjs\"}' > ./src/_cjs/package.json",
+    "build:esm": "tsc --project ./tsconfig.build.json --module es2015 --moduleResolution node --outDir ./src/_esm && printf '{\"type\": \"module\",\"sideEffects\":false}' > ./src/_esm/package.json",
+    "build:types": "tsc --project ./tsconfig.build.json --module esnext --moduleResolution node --declarationDir ./src/_types --emitDeclarationOnly --declaration --declarationMap",
+		"changeset": "changeset",
+		"changeset:release": "bun run build && changeset publish",
+		"changeset:version": "changeset version && bun install --lockfile-only",
+    "clean": "rimraf src/_esm src/_cjs src/_types",
+		"format": "biome format . --write",
+		"lint": "biome check . --apply",
+		"preinstall": "npx only-allow bun",
+		"prepare": "npx simple-git-hooks",
+		"prepublishOnly": "bun scripts/prepublishOnly.ts",
+		"size": "size-limit",
+    "test": "bun run test:node && bun run test:bun && bun run test:deno && bun run test:vite && bun run test:next",
+    "test:bun": "cd test/bun && bun run test",
+    "test:deno": "cd test/deno && bun run test",
+    "test:next": "cd test/next && bun run test",
+    "test:node": "cd test/node && bun run test",
+    "test:vite": "cd test/vite && bun run test",
+		"typecheck": "tsc --noEmit"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.2.2",
+		"@changesets/changelog-github": "^0.4.8",
+		"@changesets/cli": "^2.26.1",
+		"@types/node": "^20.3.1",
+		"bun": "^1.0.4",
+		"bun-types": "^1.0.4",
+		"rimraf": "^5.0.1",
+		"simple-git-hooks": "^2.8.1",
+		"typescript": "^5.2.2",
+		"ws": "^8.14.2"
+	},
+	"simple-git-hooks": {
+		"pre-commit": "bun run format && bun run lint"
+	}
+}
