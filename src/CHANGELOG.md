@@ -1,5 +1,11 @@
 # isows
 
+## 1.0.3
+
+### Patch Changes
+
+- [`8d37b99`](https://github.com/wagmi-dev/isows/commit/8d37b99ad08c286c20a50864d98c8119d7dae0db) Thanks [@jxom](https://github.com/jxom)! - Fixed CommonJS builds.
+
 ## 1.0.2
 
 ### Patch Changes
