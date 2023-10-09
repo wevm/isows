@@ -1,10 +1,11 @@
-import { WebSocket as WebSocketNode_ } from "ws";
+import * as WebSocket_ from "ws";
 import { getNativeWebSocket } from "./utils.js";
 
 export const WebSocket = (() => {
   try {
     return getNativeWebSocket();
   } catch {
-    return WebSocketNode_;
+    if (WebSocket_.WebSocket) return WebSocket_.WebSocket;
+    return WebSocket_;
   }
 })();

@@ -31,10 +31,7 @@
     "moduleResolution": "NodeNext",
     "module": "NodeNext",
     "target": "ES2021", // Setting this to `ES2021` enables native support for `Node v16+`: https://github.com/microsoft/TypeScript/wiki/Node-Target-Mapping.
-    "lib": [
-      "ES2022",
-      "DOM" 
-    ],
+    "lib": ["ES2022", "DOM"],
 
     // Skip type checking for node modules
     "skipLibCheck": true
