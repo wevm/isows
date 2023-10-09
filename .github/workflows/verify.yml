@@ -45,7 +45,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        type: ['bun', 'deno', 'node-16', 'node-18', 'node-20', 'node-latest', 'next', 'sveltekit', 'vite']
+        type: ['bun', 'deno', 'node-16', 'node-18', 'node-20', 'node-latest', 'next', 'sveltekit', 'tsc', 'vite']
         include:
           - type: bun
             runtime: bun
@@ -68,6 +68,8 @@ jobs:
           - type: sveltekit
             node-version: 18
             runtime: sveltekit
+          - type: tsc
+            runtime: tsc
           - type: vite
             runtime: vite
 
