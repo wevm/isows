@@ -5,6 +5,8 @@
       "_esm",
       "_types",
       ".next",
+      ".vercel",
+      ".svelte-kit",
       "bun.lockb",
       "tsconfig.json",
       "tsconfig.*.json",

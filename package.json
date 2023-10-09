@@ -17,11 +17,12 @@
     "prepare": "npx simple-git-hooks",
     "prepublishOnly": "npx bun scripts/prepublishOnly.ts",
     "size": "size-limit",
-    "test": "bun run test:node && bun run test:bun && bun run test:deno && bun run test:vite && bun run test:next",
+    "test": "bun run test:node && bun run test:bun && bun run test:deno && bun run test:vite && bun run test:sveltekit && bun run test:next",
     "test:bun": "cd test/bun && bun run test",
     "test:deno": "cd test/deno && bun run test",
     "test:next": "cd test/next && bun run test",
     "test:node": "cd test/node && bun run test",
+    "test:sveltekit": "cd test/sveltekit && bun run test",
     "test:vite": "cd test/vite && bun run test",
     "typecheck": "tsc --noEmit"
   },

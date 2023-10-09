@@ -45,7 +45,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        type: ['bun', 'deno', 'node-16', 'node-18', 'node-20', 'node-latest', 'next', 'vite']
+        type: ['bun', 'deno', 'node-16', 'node-18', 'node-20', 'node-latest', 'next', 'sveltekit', 'vite']
         include:
           - type: bun
             runtime: bun
@@ -65,6 +65,9 @@ jobs:
             runtime: node
           - type: next
             runtime: next
+          - type: sveltekit
+            node-version: 18
+            runtime: sveltekit
           - type: vite
             runtime: vite
 
@@ -77,7 +80,7 @@ jobs:
         uses: oven-sh/setup-bun@v1
 
       - name: Set up Node
-        if: ${{ matrix.runtime == 'node' }}
+        if: ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
@@ -87,7 +90,7 @@ jobs:
         uses: denoland/setup-deno@v1
 
       - name: Install Playwright Browsers
-        if: ${{ matrix.runtime == 'next' || matrix.runtime == 'vite' }}
+        if: ${{ matrix.runtime == 'next' || matrix.runtime == 'sveltekit' || matrix.runtime == 'vite' }}
         run: npx playwright install --with-deps
 
       - name: Install dependencies

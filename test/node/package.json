@@ -1,10 +1,10 @@
 {
-	"name": "test-node",
-	"private": true,
-	"scripts": {
-		"test": "node index.js && node index.mjs"
-	},
-	"dependencies": {
-		"isows": "workspace:*"
-	}
+  "name": "test-node",
+  "private": true,
+  "scripts": {
+    "test": "node index.js && node index.mjs"
+  },
+  "dependencies": {
+    "isows": "file:../../src/"
+  }
 }
