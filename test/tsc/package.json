@@ -7,6 +7,6 @@
   },
   "dependencies": {
     "isows": "file:../../src/",
-    "typescript": "latest"
+    "typescript": "^5.2.2"
   }
 }
