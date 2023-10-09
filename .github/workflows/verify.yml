@@ -69,6 +69,7 @@ jobs:
             node-version: 18
             runtime: sveltekit
           - type: tsc
+            node-version: 20
             runtime: tsc
           - type: vite
             runtime: vite
