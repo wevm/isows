@@ -25,7 +25,8 @@
 			"browser": "./_esm/native.js",
 			"deno": "./_esm/native.js",
 			"import": "./_esm/index.js",
-			"default": "./_cjs/index.js"
+			"default": "./_cjs/index.js",
+			"react-native": "./_esm/native.js"
 		},
 		"./package.json": "./package.json"
 	},
