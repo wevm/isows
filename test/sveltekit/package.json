@@ -12,7 +12,7 @@
     "isows": "file:../../src/"
   },
   "devDependencies": {
-    "@playwright/test": "^1.38.1",
+    "@playwright/test": "1.38.1",
     "@sveltejs/adapter-vercel": "^3.0.3",
     "@sveltejs/kit": "^1.20.4",
     "isows": "^1.0.3",
