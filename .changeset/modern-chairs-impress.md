@@ -2,4 +2,4 @@
 "isows": patch
 ---
 
-Adds support for the new react-native export condition
+Added `react-native` export to `package.json#exports`.
