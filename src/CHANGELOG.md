@@ -1,5 +1,11 @@
 # isows
 
+## 1.0.4
+
+### Patch Changes
+
+- [#9](https://github.com/wevm/isows/pull/9) [`1d0e496db949a59ec6d3e635522f42b69daa52b7`](https://github.com/wevm/isows/commit/1d0e496db949a59ec6d3e635522f42b69daa52b7) Thanks [@iketw](https://github.com/iketw)! - Added `react-native` export to `package.json#exports`.
+
 ## 1.0.3
 
 ### Patch Changes
