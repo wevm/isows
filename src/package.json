@@ -35,20 +35,12 @@
   },
   "license": "MIT",
   "repository": "wagmi-dev/isows",
-  "authors": [
-    "jxom.eth"
-  ],
+  "authors": ["jxom.eth"],
   "funding": [
     {
       "type": "github",
       "url": "https://github.com/sponsors/wagmi-dev"
     }
   ],
-  "keywords": [
-    "isomorphic",
-    "websocket",
-    "ws",
-    "node",
-    "browser"
-  ]
+  "keywords": ["isomorphic", "websocket", "ws", "node", "browser"]
 }
