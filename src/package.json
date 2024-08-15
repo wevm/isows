@@ -24,6 +24,7 @@
       "bun": "./_esm/native.js",
       "browser": "./_esm/native.js",
       "deno": "./_esm/native.js",
+      "worked": "./_esm/native.js",
       "import": "./_esm/index.js",
       "react-native": "./_esm/native.js",
       "default": "./_cjs/index.js"
