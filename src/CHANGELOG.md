@@ -1,5 +1,11 @@
 # isows
 
+## 1.0.5
+
+### Patch Changes
+
+- [`fc36fcbbea8a91411263dbd053e44623eac385b5`](https://github.com/wevm/isows/commit/fc36fcbbea8a91411263dbd053e44623eac385b5) Thanks [@jxom](https://github.com/jxom)! - Added `worked` export to `package.json#exports`.
+
 ## 1.0.4
 
 ### Patch Changes
