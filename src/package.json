@@ -36,20 +36,12 @@
   },
   "license": "MIT",
   "repository": "wevm/isows",
-  "authors": [
-    "jxom.eth"
-  ],
+  "authors": ["jxom.eth"],
   "funding": [
     {
       "type": "github",
       "url": "https://github.com/sponsors/wevm"
     }
   ],
-  "keywords": [
-    "isomorphic",
-    "websocket",
-    "ws",
-    "node",
-    "browser"
-  ]
+  "keywords": ["isomorphic", "websocket", "ws", "node", "browser"]
 }
