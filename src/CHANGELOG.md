@@ -1,5 +1,11 @@
 # isows
 
+## 1.0.6
+
+### Patch Changes
+
+- [#15](https://github.com/wevm/isows/pull/15) [`a8d943b5c2a47ada792d9070379aacabb8d01ceb`](https://github.com/wevm/isows/commit/a8d943b5c2a47ada792d9070379aacabb8d01ceb) Thanks [@lkwr](https://github.com/lkwr)! - Renamed conditional export `worked` to `workerd` in `package.json#exports`.
+
 ## 1.0.5
 
 ### Patch Changes
