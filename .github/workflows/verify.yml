@@ -90,7 +90,7 @@ jobs:
 
       - name: Set up Deno
         if: ${{ matrix.runtime == 'deno' }}
-        uses: denoland/setup-deno@v1
+        uses: denoland/setup-deno@v2
 
       - name: Install Playwright Browsers
         if: ${{ matrix.runtime == 'next' || matrix.runtime == 'sveltekit' || matrix.runtime == 'vite' }}
