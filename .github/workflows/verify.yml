@@ -92,12 +92,12 @@ jobs:
         if: ${{ matrix.runtime == 'deno' }}
         uses: denoland/setup-deno@v1
 
+      - name: Install dependencies
+        uses: ./.github/actions/install-dependencies
+
       - name: Install Playwright Browsers
         if: ${{ matrix.runtime == 'next' || matrix.runtime == 'sveltekit' || matrix.runtime == 'vite' }}
         run: npx playwright@1.52.0 install --with-deps
-
-      - name: Install dependencies
-        uses: ./.github/actions/install-dependencies
 
       - name: Build
         run: bun run build
