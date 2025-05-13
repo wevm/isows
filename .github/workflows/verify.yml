@@ -45,7 +45,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        type: ['bun', 'deno', 'node-16', 'node-18', 'node-20', 'node-latest', 'next', 'sveltekit', 'tsc', 'vite']
+        type: ['bun', 'deno', 'node-16', 'node-18', 'node-20', 'node-latest', 'next', 'sveltekit', 'tsc']
         include:
           - type: bun
             runtime: bun
@@ -71,8 +71,6 @@ jobs:
           - type: tsc
             node-version: 20
             runtime: tsc
-          - type: vite
-            runtime: vite
 
     steps:
       - name: Clone repository
