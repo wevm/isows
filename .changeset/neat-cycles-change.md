@@ -2,4 +2,4 @@
 "isows": patch
 ---
 
-Fixes `react-native` export in `package.json#exports`.
+Fixed `react-native` export in `package.json#exports`.
