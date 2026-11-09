@@ -68,7 +68,7 @@ jobs:
           - type: next
             runtime: next
           - type: sveltekit
-            node-version: 18
+            node-version: 20
             runtime: sveltekit
           - type: tsc
             node-version: 20
@@ -101,7 +101,7 @@ jobs:
 
       - name: Install Playwright Browsers
         if: ${{ matrix.runtime == 'next' || matrix.runtime == 'sveltekit' || matrix.runtime == 'vite' }}
-        run: npx playwright@1.52.0 install --with-deps
+        run: npx playwright@1.65.0 install --with-deps
 
       - name: Build
         run: bun run build
