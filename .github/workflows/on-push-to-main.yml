@@ -18,6 +18,10 @@ jobs:
     needs: verify
     runs-on: ubuntu-latest
     timeout-minutes: 5
+    permissions:
+      contents: write # commit version/changelog updates to the release pull request
+      pull-requests: write # create or update the Changesets release pull request
+      id-token: write # npm trusted publishing
 
     steps:
       - name: Clone repository
@@ -38,4 +42,3 @@ jobs:
           version: bun run changeset:version
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
