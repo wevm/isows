@@ -9,6 +9,9 @@ jobs:
     name: Release canary
     runs-on: ubuntu-latest
     timeout-minutes: 5
+    permissions:
+      contents: read
+      id-token: write # npm trusted publishing
 
     steps:
       - name: Clone repository
@@ -34,5 +37,3 @@ jobs:
 
       - name: Publish to npm
         run: cd src && npm publish --tag $(git branch --show-current | tr -cs '[:alnum:]-' '-' | tr '[:upper:]' '[:lower:]' | sed 's/-$//')
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
