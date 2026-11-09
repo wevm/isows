@@ -5,7 +5,7 @@ runs:
   using: "composite"
   steps:
     - name: Set up Bun
-      uses: oven-sh/setup-bun@v1
+      uses: wevm/actions/vendor/oven-sh/setup-bun/v2.2.0@b518cf981b50a4c745a8b7335fc693f34b108a75 # v1.0.1
 
     - name: Install dependencies
       shell: bash
