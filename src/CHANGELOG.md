@@ -1,5 +1,11 @@
 # isows
 
+## 1.0.8
+
+### Patch Changes
+
+- [#31](https://github.com/wevm/isows/pull/31) [`1a9abd4394f7763edaa42259e2a9d29d84cbb2f2`](https://github.com/wevm/isows/commit/1a9abd4394f7763edaa42259e2a9d29d84cbb2f2) Thanks [@tmm](https://github.com/tmm)! - Published with npm provenance via trusted publishing. No code changes.
+
 ## 1.0.7
 
 ### Patch Changes
