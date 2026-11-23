@@ -20,7 +20,7 @@ jobs:
       - name: Lint code
         run: bun run format && bun run lint
       
-      - uses: wevm/actions/vendor/stefanzweifel/git-auto-commit-action/v6.0.1@b518cf981b50a4c745a8b7335fc693f34b108a75 # v1.0.1
+      - uses: wevm/actions/vendor/stefanzweifel/git-auto-commit-action/v6.0.1@e0e99cfdac7c74eadc3ee7281015c0bf0496d6ac # v1.0.4
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -80,7 +80,7 @@ jobs:
 
       - name: Set up Bun
         if: ${{ matrix.runtime == 'bun' }}
-        uses: wevm/actions/vendor/oven-sh/setup-bun/v2.2.0@b518cf981b50a4c745a8b7335fc693f34b108a75 # v1.0.1
+        uses: wevm/actions/vendor/oven-sh/setup-bun/v2.2.0@e0e99cfdac7c74eadc3ee7281015c0bf0496d6ac # v1.0.4
         with:
           bun-version: 1.4.4
 
@@ -92,7 +92,7 @@ jobs:
 
       - name: Set up Deno
         if: ${{ matrix.runtime == 'deno' }}
-        uses: wevm/actions/vendor/denoland/setup-deno/v2@ce3e8f4d50163a659a550102f4beb1c100cb2b8b # v1.0.3
+        uses: wevm/actions/vendor/denoland/setup-deno/v2@e0e99cfdac7c74eadc3ee7281015c0bf0496d6ac # v1.0.4
         with:
           deno-version: 1.x
 
